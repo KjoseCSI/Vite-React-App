@@ -24,6 +24,12 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
+        <p>
+        Pruebas para consumo de api y aplicaciones varias 
+        <tr>
+        Tests for API consumption and various applications
+        </tr>
+        </p>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
