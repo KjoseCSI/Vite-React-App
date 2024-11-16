@@ -24,7 +24,9 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
+
         <Button label= {'Count is: '+ count } parentMethod={countMore}  />
+        
         <p></p>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
