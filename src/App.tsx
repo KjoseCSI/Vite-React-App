@@ -26,9 +26,9 @@ function App() {
         </p>
         <p>
         Pruebas para consumo de api y aplicaciones varias 
+        </p>
         <p>
         Tests for API consumption and various applications
-        </p>
         </p>
       </div>
       <p className="read-the-docs">
