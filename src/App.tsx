@@ -46,8 +46,8 @@ function App() {
     setCount((count) => count + 1)
   }
 
-  if(loading) return <p>Loading...</p>
-  if(error) return <p>Error fetching data: {error.message}</p>
+  if(loading || loadingJoke) return <p>Loading...</p>
+  if(error || errorJoke) return <p>Error fetching data: {error?.message || errorJoke?.message}</p>
   
   return (
     <>
