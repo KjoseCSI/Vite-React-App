@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.divided-container{
+  display: flex;
+  color: green;
+  justify-content: space-around;
+}
