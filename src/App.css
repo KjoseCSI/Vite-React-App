@@ -45,5 +45,5 @@
 .divided-container{
   display: flex;
   color: green;
-  justify-content: space-around;
+  justify-content: space-between;
 }
