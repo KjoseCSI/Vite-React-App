@@ -16,9 +16,31 @@ interface Data {
   url: string;
 }
 
+interface JokeResponse {
+  error: boolean;
+  category: string;
+  type: string;
+  joke: string;
+  setup: string;
+  delivery: string;
+  flags: {
+    nsfw: boolean;
+    religious: boolean;
+    political: boolean;
+    racist: boolean;
+    sexist: boolean;
+    explicit: boolean;
+  };
+  safe: boolean;
+  id: number;
+  lang: string;
+}
+
+
 function App() {
   const [count, setCount] = useState(0)
   const {data, error, loading} = useFetch<Data>(url)
+  const {data: dataJoke, error: errorJoke, loading: loadingJoke} = useFetch<JokeResponse>(url2)
 
   const countMore = () => {
     setCount((count) => count + 1)
@@ -53,6 +75,18 @@ function App() {
               <p>{data?.explanation}</p>
               {data?.hdurl && <img src={data.hdurl} alt={data.title} style={{ maxWidth: '100%' }} />}
             </div>
+      </div>
+      <div>------------------------------------------------------------</div>
+      <div className='divided-container'>
+        <div>
+          Second API: Joke's API
+        </div>
+        <div>
+          <h2>{dataJoke?.category}</h2>
+          <br/>the joke is: {dataJoke?.joke}<br/>
+          <br/>{dataJoke?.setup}
+          <br/>{dataJoke?.delivery}
+        </div>
       </div>
     </>
   )
