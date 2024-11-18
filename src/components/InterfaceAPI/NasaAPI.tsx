@@ -22,7 +22,7 @@ export const NasaAPI = () => {
      )   
     }
 
-    if(error) return <p>Error fetching data: {error?.message }</p>
+    if(error) return <p>Error fetching data with NasaAPI: {error?.message }</p>
 
     return(
         <div className='divided-container'>

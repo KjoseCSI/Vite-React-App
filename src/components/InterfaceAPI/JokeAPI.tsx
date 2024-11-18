@@ -32,7 +32,7 @@ export const JokeAPI = () => {
      )   
     }
 
-    if(error) return <p>Error fetching data: {error?.message }</p>
+    if(error) return <p>Error fetching data with JokesAPI: {error?.message }</p>
 
     return(
      <div className='divided-container'>
