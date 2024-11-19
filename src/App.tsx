@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { Button,NasaAPI,JokeAPI } from './components'
+import { Button,NasaAPI,JokeAPI,GeoIpAPI } from './components'
 
 
 function App() {
@@ -29,6 +29,8 @@ function App() {
       <NasaAPI/>
       <div>------------------------------------------------------------</div>
       <JokeAPI/>
+      <div>------------------------------------------------------------</div>
+      <GeoIpAPI />
     </>
   )
 }
