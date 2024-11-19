@@ -1,5 +1,5 @@
 .divided-container{
     display: flex;
     color: green;
-    justify-content: space-between;
+    justify-content:space-evenly;
   }
