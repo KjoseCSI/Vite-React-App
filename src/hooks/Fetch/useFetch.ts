@@ -41,7 +41,8 @@ export function useFetch<T> (url: string): Props<T> {
     return () => {
       controller.abort();
     }
-
+    
+    
   }, [url])
 
   return { data,loading,error}

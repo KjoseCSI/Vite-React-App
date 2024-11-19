@@ -1,1 +1,6 @@
-export * from "./Fetch/useFetch.tsx"
+export * from "./Fetch/useFetch.ts"
+//export * from "./Fetch/useFetch2.ts"
+//export * from "./Fetch/useDebounce.ts"
+export * from "./useInput/useInput.ts"
+export * from "./SearchPokemon/useSearchPokemon.ts"
+export * from "./Debounce/useDebounce.ts"

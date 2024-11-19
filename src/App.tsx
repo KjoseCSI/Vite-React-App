@@ -1,15 +1,23 @@
 import { useState } from 'react'
 import './App.css'
-import { Button,NasaAPI,JokeAPI,GeoIpAPI } from './components'
+import { Button,NasaAPI,JokeAPI, GeoIpAPI,InputPokemon, PokemonList } from './components'
+import { useInput, useSearchPokemon, useDebounce} from './hooks' 
 
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const [value, onChange] = useInput();
+  const debouncedValue = useDebounce(value, 1000);
+  const {isLoading, pokemon} = useSearchPokemon(debouncedValue);
+  
+
   const countMore = () => {
     setCount((count) => count + 1)
   }
   
+
+
   return (
     <>
       <h1>Vite + React</h1> 
@@ -30,7 +38,17 @@ function App() {
       <div>------------------------------------------------------------</div>
       <JokeAPI/>
       <div>------------------------------------------------------------</div>
-      <GeoIpAPI />
+      <GeoIpAPI/>
+      <div>------------------------------------------------------------</div>
+      <div className="container">
+        <h1> <span>Search Engine</span> whit <span>Debounce Effect</span> </h1>
+      </div>
+      <InputPokemon {...{value, onChange}}/>
+      {
+        isLoading
+        ?<span>Loading Results</span>
+        :<PokemonList pokemon = {pokemon}/>
+      }
     </>
   )
 }

@@ -1,31 +1,19 @@
+//import { useState } from 'react'
 import "./Table1x2.css"
 import { useFetch } from '../../hooks'
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
-const url = `http://ipwho.is/${IPaddress}`
+//const url = `http://ipwho.is/${ipAddress}`
+const url = `http://ipwho.is/181.199.54.198`
 
-interface Flag {
-  img: string;
-  emoji: string;
-  emoji_unicode: string;
-}
+// const [target,setTarget] = ("")
+// const [ipAddress,setipaddress] = useState("")
 
-interface Connection {
-  asn: number;
-  org: string;
-  isp: string;
-  domain: string;
-}
+// const handleChange = ({ target }) => {
+//   setipaddress(target.value);
+// }
 
-interface Timezone {
-  id: string;
-  abbr: string;
-  is_dst: boolean;
-  offset: number;
-  utc: string;
-  current_time: string;
-}
 
 interface IPResponse {
   ip: string;
@@ -45,9 +33,25 @@ interface IPResponse {
   calling_code: string;
   capital: string;
   borders: string;
-  flag: Flag;
-  connection: Connection;
-  timezone: Timezone;
+  flag: { 
+    img: string;
+    emoji: string;
+    emoji_unicode: string;
+  };
+  connection: {
+    asn: number;
+    org: string;
+    isp: string;
+    domain: string;
+  };
+  timezone: {
+    id: string;
+    abbr: string;
+    is_dst: boolean;
+    offset: number;
+    utc: string;
+    current_time: string;
+  };
 }
 
 export const GeoIpAPI = () => {
@@ -64,10 +68,9 @@ export const GeoIpAPI = () => {
     return(
       <div className='divided-container'>
         <div>
-          First API: NASA APIs
-          <br/>APOD: Astronomy Picture of the Day.<br/>
+          Third API: GeoIp APIs
+
         </div>
-        
         <div>
               <h2>{data?.ip || <Skeleton />}</h2>
               <br/>{data?.success || <Skeleton/>}
