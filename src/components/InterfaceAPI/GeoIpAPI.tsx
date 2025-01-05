@@ -5,7 +5,7 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 //const url = `http://ipwho.is/${ipAddress}`
-const url = `http://ipwho.is/181.199.54.198`
+const url = `http://ipwho.is/181.199.54.197`
 
 // const [target,setTarget] = ("")
 // const [ipAddress,setipaddress] = useState("")
