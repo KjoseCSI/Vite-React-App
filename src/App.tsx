@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import './App.css'
-import { Button,NasaAPI,JokeAPI, GeoIpAPI,InputPokemon, PokemonList } from './components'
+import { Button,NasaAPI,JokeAPI, GeoIpAPI,InputPokemon, PokemonList, BlackButton } from './components'
 import { useInput, useSearchPokemon, useDebounce} from './hooks' 
 import DogsAPI from './components/InterfaceAPI/DogsAPI'
+import { CustomForm } from './components/CustomForm/CustomForm'
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
   return (
     <>
       <div className="card">
-        <Button label= {`Count is: ${count}`} parentMethod={countMore}  />
+        <Button parentMethod={countMore}> <BlackButton> El conteo es : {count} </BlackButton> </Button>
         <p>
         Pruebas para consumo de api y aplicaciones varias 
         </p>
@@ -45,7 +46,9 @@ function App() {
       <GeoIpAPI/>
       <div>------------------------------------------------------------</div>
       <DogsAPI key={key}/>
-      <Button label = {'Llamar a un perro'} parentMethod={handleReload} />
+      <Button parentMethod={handleReload}> 
+        <BlackButton>Recargar imagen de perro</BlackButton>  
+      </Button>
       <div>------------------------------------------------------------</div>
       <div className="container">
         <h1> <span>Search Engine</span> whit <span>Debounce Effect</span> </h1>
@@ -56,6 +59,8 @@ function App() {
         ?<span>Loading Results</span>
         :<PokemonList pokemon = {pokemon}/>
       }
+      <div>------------------------------------------------------------</div>
+      <CustomForm/>
     </>
   )
 }

@@ -1,7 +1,5 @@
-import { Button } from "../Button/Button";
 import { useFetch } from "../../hooks";
 import Skeleton from "react-loading-skeleton";
-import { useState } from "react";
 
 
 const url = "https://dog.ceo/api/breeds/image/random"
